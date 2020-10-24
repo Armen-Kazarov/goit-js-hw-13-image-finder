@@ -1,0 +1,1 @@
+html{box-sizing:border-box}*,:after,:before{box-sizing:inherit}img{display:block;width:100%}ol,ul{list-style:none}.gallery{display:flex;justify-content:space-between;flex-wrap:wrap}.gallery-item{width:24%}.stats{display:flex;justify-content:space-between}.search-form__btn-load-more{position:fixed;bottom:0;left:50%;transform:translate(-50%)}
