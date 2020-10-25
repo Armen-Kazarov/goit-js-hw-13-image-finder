@@ -23,8 +23,8 @@ const getGalleryData = async (event) => {
     await fetch(url)
       .then(response => response.json())
       .then(response => {
-          refs.gallery.insertAdjacentHTML('afterbegin', galleryTemplate((response.hits)))
-          ImageFinder.page += 1;
+        refs.gallery.innerHTML = "";
+        refs.gallery.insertAdjacentHTML('afterbegin', galleryTemplate((response.hits)))
         }
       )
       .catch(error => console.log(error))
@@ -40,7 +40,7 @@ const renderScrollGallery = async (event) => {
     await fetch(url)
       .then(response => response.json())
       .then(response =>
-        refs.gallery.insertAdjacentHTML('afterbegin', galleryTemplate((response.hits)))
+        refs.gallery.insertAdjacentHTML('beforeend', galleryTemplate((response.hits)))
       )
     window.scrollBy({
       top: document.documentElement.offsetHeight,
