@@ -34,6 +34,7 @@ const getGalleryData = async (event) => {
 const renderScrollGallery = async (event) => {
   event.preventDefault();
   const searchQuery = refs.queryInput.value.trim();
+  ImageFinder.page += 1;
   const url = `${ImageFinder.baseUrl}${searchQuery}&page=${ImageFinder.page}&per_page=12&${ImageFinder.key}`;
 
   if(searchQuery !== '') {
@@ -46,7 +47,6 @@ const renderScrollGallery = async (event) => {
       top: document.documentElement.offsetHeight,
       behavior: 'smooth'
     })
-    ImageFinder.page += 1;
   }
 }
 
